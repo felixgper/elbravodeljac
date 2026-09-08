@@ -91,46 +91,52 @@ if (year) {
 // Formulario de diagnóstico
 const formulario = document.getElementById("contactForm");
 const formStatus = document.getElementById("formStatus");
+const submitButton = document.getElementById("submitButton");
 
-formulario.addEventListener("submit", function (evento) {
+formulario.addEventListener("submit", async function (evento) {
     evento.preventDefault();
 
     const nombre = document.getElementById("nombre").value.trim();
     const telefono = document.getElementById("telefono").value.trim();
-    const marca = document.getElementById("marca").value.trim();
-    const modelo = document.getElementById("modelo").value.trim();
-    const anio = document.getElementById("anio").value.trim();
-    const problema = document.getElementById("problema").value.trim();
-    const mensaje = document.getElementById("mensaje").value.trim();
 
     if (nombre === "" || telefono === "") {
         formStatus.textContent = "Completa tu nombre y teléfono.";
         return;
     }
 
-    // CAMBIA ESTE NÚMERO POR EL WHATSAPP REAL DEL TALLER
-    // Formato: código de país + número, sin espacios ni +
-    // Ejemplo Perú: 51977580225
-    const numeroWhatsApp = "51977580225";
+    submitButton.disabled = true;
+    submitButton.textContent = "Enviando...";
+    formStatus.textContent = "Enviando solicitud...";
 
-    const textoWhatsApp =
-`Hola, quisiera solicitar un diagnóstico para mi vehículo.
+    const datos = new FormData(formulario);
 
-Nombre: ${nombre}
-Teléfono: ${telefono}
-Marca: ${marca || "No indicado"}
-Modelo: ${modelo || "No indicado"}
-Año: ${anio || "No indicado"}
-Problema: ${problema || "No indicado"}
-Mensaje: ${mensaje || "Sin mensaje adicional"}`;
+    try {
+        const respuesta = await fetch(
+            "https://formspree.io/f/mdeopppo",
+            {
+                method: "POST",
+                body: datos,
+                headers: {
+                    "Accept": "application/json"
+                }
+            }
+        );
 
-    const urlWhatsApp =
-        "https://wa.me/" +
-        numeroWhatsApp +
-        "?text=" +
-        encodeURIComponent(textoWhatsApp);
+        if (respuesta.ok) {
+            formStatus.textContent =
+                "Solicitud enviada correctamente. Nos comunicaremos contigo pronto.";
 
-    formStatus.textContent = "Abriendo WhatsApp...";
+            formulario.reset();
+        } else {
+            formStatus.textContent =
+                "No se pudo enviar la solicitud. Inténtalo nuevamente.";
+        }
 
-    window.open(urlWhatsApp, "_blank");
+    } catch (error) {
+        formStatus.textContent =
+            "Ocurrió un problema al enviar la solicitud. Inténtalo nuevamente.";
+    } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = "Solicitar diagnóstico";
+    }
 });
