@@ -236,12 +236,14 @@ h1, h2, h3, h4 {
   background: linear-gradient(100deg, rgba(10,11,13,0.94) 20%, rgba(10,11,13,0.55) 62%, rgba(10,11,13,0.75) 100%),
               linear-gradient(0deg, rgba(10,11,13,0.9), transparent 45%);
 }
-.hero__frame { position: absolute; inset: 24px; pointer-events: none; z-index: 2; }
-.corner {
+.hero__frame {
   position: absolute;
-  width: 26px;
-  height: 26px;
-  border: 2px solid rgba(200,32,47,0.85);
+  top: 24px;
+  left: 24px;
+  right: 24px;
+  bottom: 55px;
+  pointer-events: none;
+  z-index: 2;
 }
 .corner--tl { top: 0; left: 0; border-right: none; border-bottom: none; }
 .corner--tr { top: 0; right: 0; border-left: none; border-bottom: none; }
@@ -268,7 +270,79 @@ h1, h2, h3, h4 {
   margin: 0 0 34px;
 }
 .hero__actions { display: flex; gap: 16px; flex-wrap: wrap; }
+/* Estadísticas del Hero */
+.hero__stats {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  margin-top: 42px;
+  max-width: 620px;
+  border-top: 1px solid rgba(255,255,255,0.18);
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+}
 
+.hero__stat {
+  flex: 1;
+  padding: 20px 24px 20px 0;
+  margin-right: 24px;
+  position: relative;
+}
+
+.hero__stat:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 18px;
+  right: 0;
+  bottom: 18px;
+  width: 1px;
+  background: rgba(255,255,255,0.18);
+}
+
+.hero__stat strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 1;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.hero__stat strong::first-letter {
+  color: var(--red-600);
+}
+
+.hero__stat span {
+  display: block;
+  font-family: var(--font-body);
+  color: var(--steel-400);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 650px) {
+  .hero__stats {
+    margin-top: 30px;
+    flex-direction: column;
+    max-width: 310px;
+    border-bottom: none;
+  }
+
+  .hero__stat {
+    padding: 16px 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .hero__stat:not(:last-child)::after {
+    display: none;
+  }
+
+  .hero__stat strong {
+    font-size: 1.7rem;
+  }
+}
 .hero__ticker {
   position: absolute;
   bottom: 0;
