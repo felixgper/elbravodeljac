@@ -1,4 +1,4 @@
-EL BRAVO DEL JAC - CARRUSEL COMERCIAL DE CUATRO DIAPOSITIVAS
+EL BRAVO DEL JAC - TABLA DE SERVICIOS Y WHATSAPP
 
 Esta version incorpora el diseno de hero-comercial-preview.html a la web completa.
 
@@ -11,11 +11,17 @@ CAMBIOS
 - Flechas, indicadores con progreso, pausa y reproduccion silenciosa del video.
 - Enlaces del carrusel conectados a las secciones reales de la pagina.
 - Se conserva el menu movil del proyecto.
-- Se conservan las secciones desde Servicios hasta el final.
+- Servicios ahora muestra una tabla real de mantenimiento orientativo.
+- Se retiraron los apartados de problemas del vehiculo, trabajos realizados
+  (antes/despues), trabajo tecnico explicado sin rodeos y preguntas frecuentes.
+- Cada Consultar abre WhatsApp con el servicio y el motivo de esa fila.
+- El cliente puede completar marca/modelo/anio y su consulta antes de enviar.
+- Los enlaces no envian mensajes automaticamente.
+- En celular, la tabla se desplaza horizontalmente.
 
 ARCHIVOS
-- index.html: estructura del carrusel y fuentes locales.
-- css/style.css: tipografia general y bloque final "Carrusel comercial".
+- index.html: carrusel, tabla, mensajes de WhatsApp y estructura del sitio.
+- css/style.css: tipografia, carrusel y bloque final de tabla de mantenimiento.
 - js/script.js: bloque final "Carrusel comercial de cuatro diapositivas".
 - assets/images/comercial-*.jpg: fotos y portada extraidas de la referencia.
 - assets/videos/cambio-aceite.mp4: video de la promocion.
@@ -28,6 +34,8 @@ COMO REVISAR
 4. La presentacion avanza automaticamente: 6 s, 13 s, 6 s y 6 s.
 5. El movimiento reducido del sistema inicia el carrusel pausado.
 6. La navegacion con teclado pausa los cambios mientras el foco esta dentro.
+7. En Servicios hay seis filas. Consultar abre WhatsApp con su mensaje preparado.
+8. El formulario de contacto conserva la conexion real a Formspree.
 
 COMO COPIAR A TU REPOSITORIO LOCAL
 Copia el contenido de esta carpeta dentro de la carpeta que clonaste desde GitHub.

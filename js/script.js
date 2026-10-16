@@ -21,24 +21,6 @@ enlacesMenu.forEach(function (enlace) {
     });
 });
 
-// Preguntas frecuentes
-const preguntas = document.querySelectorAll(".accordion__trigger");
-
-preguntas.forEach(function (pregunta) {
-    pregunta.addEventListener("click", function () {
-        const panel = pregunta.nextElementSibling;
-        const abierto = pregunta.getAttribute("aria-expanded") === "true";
-
-        pregunta.setAttribute("aria-expanded", String(!abierto));
-
-        if (abierto) {
-            panel.style.maxHeight = null;
-        } else {
-            panel.style.maxHeight = panel.scrollHeight + "px";
-        }
-    });
-});
-
 // Galería
 const imagenesGaleria = document.querySelectorAll(".gallery__item");
 const lightbox = document.getElementById("lightbox");
