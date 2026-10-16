@@ -1,0 +1,32 @@
+EL BRAVO DEL JAC - VERSION PARA REVISAR
+
+COMO ABRIRLA
+1. Descomprime el ZIP completo.
+2. Abre la carpeta elbravodeljac en VS Code.
+3. Abre index.html con Live Server. Tambien puedes abrirlo directamente en Chrome o Edge.
+4. Espera 6 segundos: el inicio cambia a la promocion de aceite.
+5. El video dura 10 segundos; al terminar vuelve a la presentacion.
+6. Usa las pestanas, flechas o el boton Pausar para controlar el carrusel.
+
+ARCHIVOS MODIFICADOS
+- index.html: dentro de la seccion id="inicio", estan las dos diapositivas,
+  video, precio S/ 140, enlace a WhatsApp, pestanas y controles.
+- css/style.css: al final, bloque "Inicio compacto y carrusel".
+  Ajusta altura, espacios, tipografia, controles, transicion y vista movil.
+- js/script.js: al final, bloque "Presentacion del taller y promocion de cambio de aceite".
+  Controla cambios automaticos, navegacion, pausa y reproduccion del video.
+
+ARCHIVOS AGREGADOS
+- assets/videos/cambio-aceite.mp4: tu video, preparado sin audio para el fondo.
+- assets/images/cambio-aceite-portada.jpg: imagen mientras el video carga.
+- LEEME-REVISION.txt: estas instrucciones.
+
+IMPORTANTE
+- Esta copia no se ha publicado ni subido a GitHub.
+- El contenido desde Servicios hasta el final es el mismo del repositorio original.
+- El precio visible y el mensaje de WhatsApp se cambian en index.html.
+- Si el sistema tiene activada la opcion de reducir movimiento, el carrusel
+  empieza pausado. Puedes utilizar las pestanas o pulsar Continuar.
+- Al navegar por el carrusel con teclado, se pausa mientras el foco esta dentro.
+- El formulario conserva su conexion real con Formspree. Si lo envias,
+  se enviara una solicitud al taller.

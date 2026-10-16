@@ -17,7 +17,6 @@
   <meta name="theme-color" content="#101216">
 
   <!-- Open Graph / vista previa al compartir por WhatsApp, Facebook, etc. -->
-  <!-- IMPORTANTE: reemplazar "https://www.elbravodeljac.com/" por el dominio real cuando la página esté publicada -->
   <meta property="og:type" content="business.business">
   <meta property="og:url" content="https://www.elbravodeljac.com/">
   <meta property="og:title" content="El Bravo del Jac — Especialistas en Motores y Mecánica Automotriz">
@@ -88,7 +87,9 @@
 
   <main>
     <!-- =================== HERO =================== -->
-    <section class="hero" id="inicio">
+    <section class="hero" id="inicio" role="region" aria-roledescription="carrusel" aria-label="Presentación y promociones del taller">
+      <div class="hero__track" id="heroTrack">
+        <div class="hero__slide" id="heroSlide0" role="group" aria-roledescription="diapositiva" aria-label="1 de 2: El taller">
       <div class="hero__media">
         <img src="assets/images/hero-motor.jpg" alt="Mecánico especializado realizando reparación de motor en el taller" loading="eager">
         <div class="hero__scrim"></div>
@@ -121,6 +122,35 @@
             <span>Trabajos realizados</span>
           </div>
         </div>
+      </div>
+        </div>
+        <div class="hero__slide hero__slide--oil" id="heroSlide1" role="group" aria-roledescription="diapositiva" aria-label="2 de 2: Cambio de aceite">
+          <div class="hero__media">
+            <video id="oilVideo" muted playsinline preload="none" poster="assets/images/cambio-aceite-portada.jpg" aria-hidden="true">
+              <source src="assets/videos/cambio-aceite.mp4" type="video/mp4">
+            </video>
+            <div class="hero__scrim"></div>
+          </div>
+          <div class="container hero__content">
+            <p class="hero__brands">CUIDAMOS TU MOTOR</p>
+            <h2 class="hero__title">Cambio de aceite</h2>
+            <p class="hero__price"><span>Desde</span> S/ 140</p>
+            <p class="hero__subtitle">Consulta el aceite y filtro adecuados para tu vehículo.</p>
+            <div class="hero__actions">
+              <a href="https://wa.me/51977580225?text=Hola%2C%20quisiera%20consultar%20por%20el%20cambio%20de%20aceite%20desde%20S%2F%20140%20para%20mi%20veh%C3%ADculo." class="btn btn--primary" target="_blank" rel="noopener">Solicitar cambio de aceite</a>
+            </div>
+            <p class="hero__conditions">Precio referencial. Según tipo y cantidad de aceite y filtro.</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero__controls" aria-label="Controles de la presentación">
+        <button class="hero__arrow" id="heroPrevious" type="button" aria-label="Diapositiva anterior">&#8249;</button>
+        <div class="hero__tabs" role="group" aria-label="Elegir diapositiva">
+          <button class="hero__tab is-active" type="button" data-hero-slide="0" aria-pressed="true" aria-controls="heroSlide0">01 <span>El taller</span></button>
+          <button class="hero__tab" type="button" data-hero-slide="1" aria-pressed="false" aria-controls="heroSlide1">02 <span>Cambio de aceite</span></button>
+        </div>
+        <button class="hero__arrow" id="heroNext" type="button" aria-label="Diapositiva siguiente">&#8250;</button>
+        <button class="hero__pause" id="heroPause" type="button" aria-label="Pausar presentación automática" aria-pressed="false">Pausar</button>
       </div>
       <div class="hero__ticker" role="note">
         <div class="hero__ticker-track">
