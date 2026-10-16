@@ -1,32 +1,37 @@
-EL BRAVO DEL JAC - VERSION PARA REVISAR
+EL BRAVO DEL JAC - CARRUSEL COMERCIAL DE CUATRO DIAPOSITIVAS
 
-COMO ABRIRLA
+Esta version incorpora el diseno de hero-comercial-preview.html a la web completa.
+
+CAMBIOS
+- Carrusel con las cuatro diapositivas, fotos, video, textos y estilo de la referencia.
+- Diapositivas: presentacion, cambio de aceite desde S/ 140,
+  diagnostico electronico y especializacion JAC.
+- Poppins en los titulos y botones de toda la pagina; Inter en los parrafos,
+  como en la vista previa. Las fuentes estan incluidas en assets/fonts.
+- Flechas, indicadores con progreso, pausa y reproduccion silenciosa del video.
+- Enlaces del carrusel conectados a las secciones reales de la pagina.
+- Se conserva el menu movil del proyecto.
+- Se conservan las secciones desde Servicios hasta el final.
+
+ARCHIVOS
+- index.html: estructura del carrusel y fuentes locales.
+- css/style.css: tipografia general y bloque final "Carrusel comercial".
+- js/script.js: bloque final "Carrusel comercial de cuatro diapositivas".
+- assets/images/comercial-*.jpg: fotos y portada extraidas de la referencia.
+- assets/videos/cambio-aceite.mp4: video de la promocion.
+- assets/fonts/: fuentes y sus licencias.
+
+COMO REVISAR
 1. Descomprime el ZIP completo.
-2. Abre la carpeta elbravodeljac en VS Code.
-3. Abre index.html con Live Server. Tambien puedes abrirlo directamente en Chrome o Edge.
-4. Espera 6 segundos: el inicio cambia a la promocion de aceite.
-5. El video dura 10 segundos; al terminar vuelve a la presentacion.
-6. Usa las pestanas, flechas o el boton Pausar para controlar el carrusel.
+2. Abre index.html en Chrome/Edge o con Live Server desde VS Code.
+3. Prueba las flechas, indicadores y el boton de pausa.
+4. La presentacion avanza automaticamente: 6 s, 13 s, 6 s y 6 s.
+5. El movimiento reducido del sistema inicia el carrusel pausado.
+6. La navegacion con teclado pausa los cambios mientras el foco esta dentro.
 
-ARCHIVOS MODIFICADOS
-- index.html: dentro de la seccion id="inicio", estan las dos diapositivas,
-  video, precio S/ 140, enlace a WhatsApp, pestanas y controles.
-- css/style.css: al final, bloque "Inicio compacto y carrusel".
-  Ajusta altura, espacios, tipografia, controles, transicion y vista movil.
-- js/script.js: al final, bloque "Presentacion del taller y promocion de cambio de aceite".
-  Controla cambios automaticos, navegacion, pausa y reproduccion del video.
-
-ARCHIVOS AGREGADOS
-- assets/videos/cambio-aceite.mp4: tu video, preparado sin audio para el fondo.
-- assets/images/cambio-aceite-portada.jpg: imagen mientras el video carga.
-- LEEME-REVISION.txt: estas instrucciones.
-
-IMPORTANTE
-- Esta copia no se ha publicado ni subido a GitHub.
-- El contenido desde Servicios hasta el final es el mismo del repositorio original.
-- El precio visible y el mensaje de WhatsApp se cambian en index.html.
-- Si el sistema tiene activada la opcion de reducir movimiento, el carrusel
-  empieza pausado. Puedes utilizar las pestanas o pulsar Continuar.
-- Al navegar por el carrusel con teclado, se pausa mientras el foco esta dentro.
-- El formulario conserva su conexion real con Formspree. Si lo envias,
-  se enviara una solicitud al taller.
+COMO COPIAR A TU REPOSITORIO LOCAL
+Copia el contenido de esta carpeta dentro de la carpeta que clonaste desde GitHub.
+Acepta reemplazar los archivos. Conserva la carpeta oculta .git del repositorio.
+El ZIP contiene los archivos del sitio y no incluye historial ni conexion Git.
+Despues ejecuta git status desde la carpeta clonada para ver los cambios.
+No se ha publicado ni enviado esta version a GitHub.

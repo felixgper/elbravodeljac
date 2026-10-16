@@ -17,6 +17,7 @@
   <meta name="theme-color" content="#101216">
 
   <!-- Open Graph / vista previa al compartir por WhatsApp, Facebook, etc. -->
+  <!-- IMPORTANTE: reemplazar "https://www.elbravodeljac.com/" por el dominio real cuando la página esté publicada -->
   <meta property="og:type" content="business.business">
   <meta property="og:url" content="https://www.elbravodeljac.com/">
   <meta property="og:title" content="El Bravo del Jac — Especialistas en Motores y Mecánica Automotriz">
@@ -30,9 +31,6 @@
   <meta name="twitter:description" content="Especialistas en motores JAC y atención multimarca.">
   <meta name="twitter:image" content="https://www.elbravodeljac.com/assets/brand/og-image.jpg">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 
   <!-- Datos estructurados para Google (ficha del negocio) -->
@@ -87,88 +85,104 @@
 
   <main>
     <!-- =================== HERO =================== -->
-    <section class="hero" id="inicio" role="region" aria-roledescription="carrusel" aria-label="Presentación y promociones del taller">
-      <div class="hero__track" id="heroTrack">
-        <div class="hero__slide" id="heroSlide0" role="group" aria-roledescription="diapositiva" aria-label="1 de 2: El taller">
-      <div class="hero__media">
-        <img src="assets/images/hero-motor.jpg" alt="Mecánico especializado realizando reparación de motor en el taller" loading="eager">
-        <div class="hero__scrim"></div>
+    <section class="commercial-hero" id="inicio" role="region" aria-roledescription="carrusel" aria-label="Promociones y servicios del taller">
+
+  <!-- 1 -->
+  <div class="commercial-slide is-active" data-dur="6" role="group" aria-roledescription="diapositiva" aria-label="1 de 4">
+    <div class="commercial-media"><img src="assets/images/comercial-diagnostico.jpg" alt="Técnico diagnosticando el motor de un vehículo JAC con scanner"></div>
+    <div class="commercial-shade"></div>
+    <div class="commercial-copy">
+      <span class="commercial-chip"><i></i>Especialistas en motor · JAC y multimarca</span>
+      <h1>Tu motor en manos de <em>especialistas</em></h1>
+      <p class="commercial-sub">Diagnóstico, reparación y mantenimiento de motores para vehículos JAC y de cualquier marca.</p>
+      <div class="commercial-cta">
+        <a class="commercial-pill commercial-pill--red" href="#contacto">Solicitar diagnóstico</a>
+        <a class="commercial-pill commercial-pill--line" href="https://wa.me/51977580225?text=Hola%2C%20quisiera%20consultar%20por%20una%20revisi%C3%B3n%20de%20mi%20veh%C3%ADculo." target="_blank" rel="noopener"><svg viewBox="0 0 32 32"><path d="M16 4a12 12 0 00-10.3 18L4 28l6.2-1.6A12 12 0 1016 4zm0 2a10 10 0 018.6 15.1l.3.6-1 3.6-3.7-1-.5.3A10 10 0 1116 6zm-4.4 5.2c-.3 0-.7 0-1 .4-.4.4-1.4 1.3-1.4 3.1s1.4 3.6 1.6 3.9c.2.2 2.8 4.4 6.9 6 3.4 1.3 4 1.1 4.8 1 .8-.1 2.4-1 2.7-1.9.3-.9.3-1.7.2-1.9-.1-.2-.4-.3-.8-.5-.4-.2-2.4-1.2-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.3 1.5-.2.3-.5.3-.9.1-.4-.2-1.7-.6-3.3-2-1.2-1.1-2-2.4-2.3-2.8-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.3-.4.4-.7.1-.3.1-.5 0-.7-.1-.2-.9-2.3-1.3-3.1-.3-.8-.6-.7-.9-.7z"/></svg>Escribir por WhatsApp</a>
       </div>
-      <div class="hero__frame" aria-hidden="true">
-        <span class="corner corner--tl"></span>
-        <span class="corner corner--tr"></span>
-        <span class="corner corner--bl"></span>
-        <span class="corner corner--br"></span>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="commercial-slide" data-dur="13" role="group" aria-roledescription="diapositiva" aria-label="2 de 4">
+    <div class="commercial-media"><video id="oilVideo" muted playsinline preload="none" poster="assets/images/comercial-aceite-portada.jpg" aria-hidden="true"><source src="assets/videos/cambio-aceite.mp4" type="video/mp4"></video></div>
+    <div class="commercial-shade"></div>
+    <div class="commercial-copy">
+      <span class="commercial-chip"><i></i>Promoción · Cuidamos tu motor</span>
+      <h2>Cambio de aceite</h2>
+      <p class="commercial-price"><span>Desde</span><strong>S/ 140</strong></p>
+      <p class="commercial-sub">Consulta el aceite y filtro adecuados para tu vehículo.</p>
+      <div class="commercial-cta">
+        <a class="commercial-pill commercial-pill--red" href="https://wa.me/51977580225?text=Hola%2C%20quisiera%20consultar%20por%20el%20cambio%20de%20aceite%20desde%20S%2F%20140%20para%20mi%20veh%C3%ADculo." target="_blank" rel="noopener">Quiero mi cambio de aceite</a>
       </div>
-      <div class="container hero__content">
-        <p class="hero__brands">Especialistas en JAC · chinos · coreanos · japoneses · multimarca</p>
-        <h1 class="hero__title">Tu motor, en manos de especialistas</h1>
-        <p class="hero__subtitle">Diagnóstico, reparación y mantenimiento especializado de motores para vehículos JAC y de cualquier marca.</p>
-        <div class="hero__actions">
-          <a href="#contacto" class="btn btn--primary">Solicitar diagnóstico</a>
-          <a href="#servicios" class="btn btn--ghost">Ver servicios</a>
-        </div>
-        <div class="hero__stats">
-          <div class="hero__stat">
-            <strong>25+</strong>
-            <span>Años de experiencia</span>
-          </div>
-          <div class="hero__stat">
-            <strong>500+</strong>
-            <span>Clientes atendidos</span>
-          </div>
-          <div class="hero__stat">
-            <strong>1500+</strong>
-            <span>Trabajos realizados</span>
-          </div>
-        </div>
+      <p class="commercial-fine">Precio referencial. Según tipo y cantidad de aceite y filtro.</p>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="commercial-slide" data-dur="6" role="group" aria-roledescription="diapositiva" aria-label="3 de 4">
+    <div class="commercial-media"><img src="assets/images/comercial-mecanico.jpg" alt="Mecánico del taller revisando el motor bajo el capó"></div>
+    <div class="commercial-shade"></div>
+    <div class="commercial-copy">
+      <span class="commercial-chip"><i></i>Diagnóstico electrónico</span>
+      <h2>¿Check Engine encendido? <em>No lo ignores</em></h2>
+      <p class="commercial-sub">Escaneamos tu vehículo, encontramos la falla real y te la explicamos antes de reparar.</p>
+      <div class="commercial-cta">
+        <a class="commercial-pill commercial-pill--red" href="#contacto">Solicitar diagnóstico</a>
+        <a class="commercial-pill commercial-pill--line" href="#problemas">Ver síntomas frecuentes</a>
       </div>
-        </div>
-        <div class="hero__slide hero__slide--oil" id="heroSlide1" role="group" aria-roledescription="diapositiva" aria-label="2 de 2: Cambio de aceite">
-          <div class="hero__media">
-            <video id="oilVideo" muted playsinline preload="none" poster="assets/images/cambio-aceite-portada.jpg" aria-hidden="true">
-              <source src="assets/videos/cambio-aceite.mp4" type="video/mp4">
-            </video>
-            <div class="hero__scrim"></div>
-          </div>
-          <div class="container hero__content">
-            <p class="hero__brands">CUIDAMOS TU MOTOR</p>
-            <h2 class="hero__title">Cambio de aceite</h2>
-            <p class="hero__price"><span>Desde</span> S/ 140</p>
-            <p class="hero__subtitle">Consulta el aceite y filtro adecuados para tu vehículo.</p>
-            <div class="hero__actions">
-              <a href="https://wa.me/51977580225?text=Hola%2C%20quisiera%20consultar%20por%20el%20cambio%20de%20aceite%20desde%20S%2F%20140%20para%20mi%20veh%C3%ADculo." class="btn btn--primary" target="_blank" rel="noopener">Solicitar cambio de aceite</a>
-            </div>
-            <p class="hero__conditions">Precio referencial. Según tipo y cantidad de aceite y filtro.</p>
-          </div>
-        </div>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="commercial-slide" data-dur="6" role="group" aria-roledescription="diapositiva" aria-label="4 de 4">
+    <div class="commercial-media"><img src="assets/images/comercial-jac.jpg" alt="Vehículo JAC con el capó abierto en el taller"></div>
+    <div class="commercial-shade"></div>
+    <div class="commercial-copy">
+      <span class="commercial-chip"><i></i>Especialistas en JAC</span>
+      <h2>Tu JAC merece un taller que <em>lo conoce</em></h2>
+      <p class="commercial-sub">Conocemos sus motores, sistemas y fallas más frecuentes. También atendemos chinos, coreanos, japoneses, americanos y europeos.</p>
+      <div class="commercial-cta">
+        <a class="commercial-pill commercial-pill--red" href="https://wa.me/51977580225?text=Hola%2C%20tengo%20un%20JAC%20y%20quisiera%20consultar%20por%20una%20revisi%C3%B3n." target="_blank" rel="noopener">Consultar por WhatsApp</a>
+        <a class="commercial-pill commercial-pill--line" href="#jac">Ver especialidades</a>
       </div>
-      <div class="hero__controls" aria-label="Controles de la presentación">
-        <button class="hero__arrow" id="heroPrevious" type="button" aria-label="Diapositiva anterior">&#8249;</button>
-        <div class="hero__tabs" role="group" aria-label="Elegir diapositiva">
-          <button class="hero__tab is-active" type="button" data-hero-slide="0" aria-pressed="true" aria-controls="heroSlide0">01 <span>El taller</span></button>
-          <button class="hero__tab" type="button" data-hero-slide="1" aria-pressed="false" aria-controls="heroSlide1">02 <span>Cambio de aceite</span></button>
-        </div>
-        <button class="hero__arrow" id="heroNext" type="button" aria-label="Diapositiva siguiente">&#8250;</button>
-        <button class="hero__pause" id="heroPause" type="button" aria-label="Pausar presentación automática" aria-pressed="false">Pausar</button>
-      </div>
-      <div class="hero__ticker" role="note">
-        <div class="hero__ticker-track">
-          <span>Diagnóstico de motor</span>
-          <span>Reparación de culata</span>
-          <span>Escaneo automotriz</span>
-          <span>Especialistas en JAC</span>
-          <span>Atención multimarca</span>
-          <span>Sistema de inyección</span>
-          <span>Diagnóstico de motor</span>
-          <span>Reparación de culata</span>
-          <span>Escaneo automotriz</span>
-          <span>Especialistas en JAC</span>
-          <span>Atención multimarca</span>
-          <span>Sistema de inyección</span>
-        </div>
-      </div>
-    </section>
+    </div>
+  </div>
+
+  <div class="commercial-controls">
+    <button class="commercial-arrow" id="commercialPrevious" aria-label="Diapositiva anterior"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="commercial-dots" id="commercialDots" role="group" aria-label="Elegir diapositiva">
+      <button class="commercial-dot is-active" aria-label="Ir a la diapositiva 1"></button>
+      <button class="commercial-dot" aria-label="Ir a la diapositiva 2"></button>
+      <button class="commercial-dot" aria-label="Ir a la diapositiva 3"></button>
+      <button class="commercial-dot" aria-label="Ir a la diapositiva 4"></button>
+    </div>
+    <button class="commercial-pausebtn" id="commercialPause" aria-label="Pausar presentación automática">
+      <svg class="commercial-ic-pause" viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+      <svg class="commercial-ic-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+    </button>
+    <button class="commercial-arrow" id="commercialNext" aria-label="Diapositiva siguiente"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+  </div>
+</section>
+
+<section class="commercial-perks" aria-label="Por qué elegirnos">
+  <div class="commercial-perk">
+    <svg viewBox="0 0 32 32"><path d="M16 3l11 4v8c0 7-4.5 12-11 14C9.5 27 5 22 5 15V7z"/><path d="M11 16l4 4 7-8"/></svg>
+    <div><b>Diagnóstico claro</b><span>Te explicamos la falla antes de reparar.</span></div>
+  </div>
+  <div class="commercial-perk">
+    <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="12"/><path d="M4 16h24M16 4c4 4 4 20 0 24M16 4c-4 4-4 20 0 24"/></svg>
+    <div><b>Atención multimarca</b><span>JAC, chinos, coreanos, japoneses, americanos y europeos.</span></div>
+  </div>
+  <div class="commercial-perk">
+    <svg viewBox="0 0 32 32"><path d="M6 18h16v5h4a1 1 0 011 1v3H5v-3a1 1 0 011-1z"/><rect x="9" y="9" width="5" height="5"/><rect x="16" y="9" width="5" height="5"/></svg>
+    <div><b>Especialistas en motor</b><span>Conocemos los motores JAC y sus fallas frecuentes.</span></div>
+  </div>
+  <div class="commercial-perk">
+    <svg viewBox="0 0 32 32"><path d="M6 8h20a2 2 0 012 2v10a2 2 0 01-2 2H14l-6 5v-5H6a2 2 0 01-2-2V10a2 2 0 012-2z"/></svg>
+    <div><b>Escríbenos por WhatsApp</b><span>Cuéntanos qué le pasa a tu vehículo: 977 580 225.</span></div>
+  </div>
+</section>
+
 
     <!-- =================== SERVICIOS =================== -->
     <section class="section section--light" id="servicios">

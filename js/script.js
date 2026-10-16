@@ -140,17 +140,19 @@ formulario.addEventListener("submit", async function (evento) {
         submitButton.textContent = "Solicitar diagnóstico";
     }
 });
-// Presentación del taller y promoción de cambio de aceite
+
+// Carrusel comercial de cuatro diapositivas
 (() => {
     const hero = document.getElementById("inicio");
-    const track = document.getElementById("heroTrack");
-    const slides = Array.from(hero.querySelectorAll(".hero__slide"));
-    const tabs = Array.from(hero.querySelectorAll("[data-hero-slide]"));
+    const slides = Array.from(hero.querySelectorAll(".commercial-slide"));
+    const dots = Array.from(hero.querySelectorAll(".commercial-dot"));
     const video = document.getElementById("oilVideo");
-    const pause = document.getElementById("heroPause");
+    const pauseButton = document.getElementById("commercialPause");
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     let current = 0;
     let timer;
+    let startedAt = 0;
+    let remaining = 6000;
     let userPaused = reducedMotion.matches;
     let focused = false;
     let visible = true;
@@ -158,74 +160,95 @@ formulario.addEventListener("submit", async function (evento) {
     hero.classList.add("is-enhanced");
     video.muted = true;
 
-    function stopped() {
-        return userPaused || focused || document.hidden || !visible;
-    }
-
-    function updatePlayback() {
+    function syncPlayback() {
+        if (startedAt) remaining = Math.max(0, remaining - (performance.now() - startedAt));
         clearTimeout(timer);
-        pause.textContent = userPaused ? "Continuar" : "Pausar";
-        pause.setAttribute("aria-pressed", String(userPaused));
-        pause.setAttribute("aria-label", userPaused ? "Continuar presentación automática" : "Pausar presentación automática");
-        if (stopped()) {
+        startedAt = 0;
+        const paused = userPaused || focused || document.hidden || !visible;
+        hero.classList.toggle("is-paused", paused);
+        pauseButton.setAttribute("aria-pressed", String(userPaused));
+        pauseButton.setAttribute("aria-label", userPaused ? "Continuar presentación automática" : "Pausar presentación automática");
+        if (paused) {
             video.pause();
             return;
         }
-        if (current === 1) {
-            if (video.ended) video.currentTime = 0;
+        if (slides[current].contains(video)) {
             const attempt = video.play();
             if (attempt) attempt.catch(() => {});
-            // También funciona si el navegador bloquea el video o la conexión falla.
-            const remaining = Number.isFinite(video.duration) ? Math.max(1, video.duration - video.currentTime) : 10;
-            timer = setTimeout(() => show(0), (remaining + 1) * 1000);
         } else {
             video.pause();
-            timer = setTimeout(() => show(1), 6000);
         }
+        startedAt = performance.now();
+        timer = setTimeout(() => show(current + 1), remaining);
     }
 
     function show(index) {
-        const next = (index + slides.length) % slides.length;
-        if (current !== next) video.currentTime = 0;
-        current = next;
-        track.style.transform = `translateX(${current * 100}%)`;
+        clearTimeout(timer);
+        startedAt = 0;
+        video.pause();
+        current = (index + slides.length) % slides.length;
+        remaining = Number(slides[current].dataset.dur || 6) * 1000;
         slides.forEach((slide, i) => {
+            slide.classList.toggle("is-active", i === current);
             slide.inert = i !== current;
             slide.setAttribute("aria-hidden", String(i !== current));
+            slide.id = `commercialSlide${i}`;
         });
-        tabs.forEach((tab, i) => {
-            tab.classList.toggle("is-active", i === current);
-            tab.setAttribute("aria-pressed", String(i === current));
+        dots.forEach((dot, i) => {
+            dot.classList.remove("is-active");
+            dot.style.setProperty("--dur", `${slides[i].dataset.dur || 6}s`);
+            dot.setAttribute("aria-pressed", String(i === current));
+            dot.setAttribute("aria-controls", `commercialSlide${i}`);
         });
-        updatePlayback();
+        // Reinicia la barra visual también al volver a la misma diapositiva.
+        void dots[current].offsetWidth;
+        dots[current].classList.add("is-active");
+        if (slides[current].contains(video)) video.currentTime = 0;
+        syncPlayback();
     }
 
-    tabs.forEach(tab => tab.addEventListener("click", () => show(Number(tab.dataset.heroSlide))));
-    document.getElementById("heroPrevious").addEventListener("click", () => show(current - 1));
-    document.getElementById("heroNext").addEventListener("click", () => show(current + 1));
-    pause.addEventListener("click", () => {
+    dots.forEach((dot, i) => dot.addEventListener("click", () => show(i)));
+    document.getElementById("commercialPrevious").addEventListener("click", () => show(current - 1));
+    document.getElementById("commercialNext").addEventListener("click", () => show(current + 1));
+    pauseButton.addEventListener("click", () => {
         userPaused = !userPaused;
-        updatePlayback();
+        syncPlayback();
     });
-    // La navegación con teclado detiene los cambios para no mover el foco.
     hero.addEventListener("focusin", event => {
         focused = event.target.matches(":focus-visible");
-        updatePlayback();
+        syncPlayback();
     });
     hero.addEventListener("focusout", event => {
-        if (!hero.contains(event.relatedTarget)) { focused = false; updatePlayback(); }
+        if (!hero.contains(event.relatedTarget)) { focused = false; syncPlayback(); }
     });
-    video.addEventListener("ended", () => { if (current === 1 && !stopped()) show(0); });
-    document.addEventListener("visibilitychange", updatePlayback);
+    document.addEventListener("visibilitychange", syncPlayback);
     reducedMotion.addEventListener("change", event => {
         userPaused = event.matches;
-        updatePlayback();
+        syncPlayback();
     });
     if ("IntersectionObserver" in window) {
         new IntersectionObserver(entries => {
             visible = entries[0].isIntersecting;
-            updatePlayback();
+            syncPlayback();
         }).observe(hero);
     }
+    // Ajusta la altura mínima en móviles para que precio, botones y controles no se superpongan.
+    function fitMobileContent() {
+        if (window.innerWidth > 640) { hero.style.removeProperty("--commercial-mobile-height"); return; }
+        let required = 600;
+        slides.forEach(slide => {
+            const copy = slide.querySelector(".commercial-copy");
+            const children = Array.from(copy.children);
+            const height = children.reduce((total, child) => {
+                const style = getComputedStyle(child);
+                return total + child.offsetHeight + parseFloat(style.marginTop || 0) + parseFloat(style.marginBottom || 0);
+            }, 0);
+            required = Math.max(required, height + 130);
+        });
+        hero.style.setProperty("--commercial-mobile-height", `${Math.ceil(required)}px`);
+    }
+    window.addEventListener("resize", fitMobileContent);
+    if (document.fonts) document.fonts.ready.then(fitMobileContent);
+    fitMobileContent();
     show(0);
 })();
