@@ -15,13 +15,13 @@ QUE INCLUYE
 - Como llegar abre Google Maps con el destino del taller en otra pestana.
 - Todos los botones Solicitar diagnostico abren el mismo formulario en una ventana.
 - El formulario conserva sus datos al cerrar, admite Escape y se adapta al celular.
-- Se conservaron las secciones JAC, multimarca, proceso, nosotros, galeria y testimonios.
+- Se conservan JAC, nosotros y testimonios. Multimarca y proceso tienen los nuevos disenos. La galeria se retiro.
 - Permanecen retirados los cuatro apartados que se pidio eliminar.
 
 ARCHIVOS PRINCIPALES
 - index.html: estructura, enlaces de servicios, footer y formulario en dialog.
 - css/style.css: estilos y ajustes de escritorio, tableta y celular.
-- js/script.js: carrusel, menu, galeria, formulario y ventana de diagnostico.
+- js/script.js: carrusel, menu, formulario y ventana de diagnostico.
 - js/config.js: enlaces oficiales de las redes sociales.
 - assets/images/torito-mecanico.png: mascota con transparencia.
 - assets/videos/cambio-aceite.mp4: video de la promocion.
@@ -46,3 +46,11 @@ Acepta reemplazar los archivos. Conserva la carpeta oculta .git que ya tiene tu 
 El ZIP no incluye .git ni el historial de GitHub.
 Abre la carpeta clonada en VS Code y ejecuta git status para revisar los cambios.
 Esta version no se ha publicado ni enviado a GitHub.
+
+ULTIMA ACTUALIZACION
+- Telefono y WhatsApp: +51 993 273 611.
+- Los mensajes individuales de cada servicio se conservan.
+- Se agregaron las 34 marcas de la imagen original del usuario.
+- Los logos se muestran con ventanas SVG sobre la imagen original, sin redibujarlos.
+- Proceso de siete pasos sobre foto del taller con capa oscura.
+- Se retiro la galeria, su ventana y sus enlaces.

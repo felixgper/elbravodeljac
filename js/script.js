@@ -26,48 +26,6 @@ document.addEventListener("keydown", event => {
 });
 closeNavigation();
 
-// Galería
-const imagenesGaleria = document.querySelectorAll(".gallery__item");
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightboxImg");
-const lightboxClose = document.getElementById("lightboxClose");
-
-imagenesGaleria.forEach(function (imagen) {
-    imagen.addEventListener("click", function () {
-        const rutaImagen = imagen.getAttribute("data-full");
-        const img = imagen.querySelector("img");
-
-        lightboxImg.src = rutaImagen;
-
-        if (img) {
-            lightboxImg.alt = img.alt;
-        }
-
-        lightbox.classList.add("is-open");
-        lightbox.setAttribute("aria-hidden", "false");
-    });
-});
-
-lightboxClose.addEventListener("click", function () {
-    lightbox.classList.remove("is-open");
-    lightbox.setAttribute("aria-hidden", "true");
-});
-
-lightbox.addEventListener("click", function (evento) {
-    if (evento.target === lightbox) {
-        lightbox.classList.remove("is-open");
-        lightbox.setAttribute("aria-hidden", "true");
-    }
-});
-
-// Cerrar galería con Escape
-document.addEventListener("keydown", function (evento) {
-    if (evento.key === "Escape" && lightbox.classList.contains("is-open")) {
-        lightbox.classList.remove("is-open");
-        lightbox.setAttribute("aria-hidden", "true");
-    }
-});
-
 // Año automático del footer
 const year = document.getElementById("year");
 
