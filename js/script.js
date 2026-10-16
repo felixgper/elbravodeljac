@@ -1,25 +1,30 @@
-// Menú para celulares
+// Menú para celulares y tabletas
 const navToggle = document.getElementById("navToggle");
 const navMenu = document.getElementById("navMenu");
-
-navToggle.addEventListener("click", function () {
-    navMenu.classList.toggle("is-open");
-    navToggle.classList.toggle("is-open");
-
-    const abierto = navMenu.classList.contains("is-open");
-    navToggle.setAttribute("aria-expanded", abierto);
+const compactNavigation = window.matchMedia("(max-width: 1240px)");
+function closeNavigation() {
+    navMenu.classList.remove("is-open");
+    navToggle.classList.remove("is-open");
+    navToggle.setAttribute("aria-expanded", "false");
+    navToggle.setAttribute("aria-label", "Abrir menú");
+    navMenu.inert = compactNavigation.matches;
+}
+navToggle.addEventListener("click", () => {
+    const open = !navMenu.classList.contains("is-open");
+    navMenu.classList.toggle("is-open", open);
+    navToggle.classList.toggle("is-open", open);
+    navToggle.setAttribute("aria-expanded", String(open));
+    navToggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+    navMenu.inert = !open && compactNavigation.matches;
 });
-
-// Cerrar menú al tocar una opción
-const enlacesMenu = document.querySelectorAll(".navbar__link");
-
-enlacesMenu.forEach(function (enlace) {
-    enlace.addEventListener("click", function () {
-        navMenu.classList.remove("is-open");
-        navToggle.classList.remove("is-open");
-        navToggle.setAttribute("aria-expanded", "false");
-    });
+navMenu.querySelectorAll("a, button").forEach(link => link.addEventListener("click", closeNavigation));
+compactNavigation.addEventListener("change", closeNavigation);
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && navMenu.classList.contains("is-open")) {
+        closeNavigation(); navToggle.focus();
+    }
 });
+closeNavigation();
 
 // Galería
 const imagenesGaleria = document.querySelectorAll(".gallery__item");
@@ -77,18 +82,21 @@ const submitButton = document.getElementById("submitButton");
 
 formulario.addEventListener("submit", async function (evento) {
     evento.preventDefault();
+    if (submitButton.disabled) return;
 
     const nombre = document.getElementById("nombre").value.trim();
     const telefono = document.getElementById("telefono").value.trim();
 
     if (nombre === "" || telefono === "") {
         formStatus.textContent = "Completa tu nombre y teléfono.";
+        formStatus.dataset.state = "error";
         return;
     }
 
     submitButton.disabled = true;
     submitButton.textContent = "Enviando...";
     formStatus.textContent = "Enviando solicitud...";
+    formStatus.dataset.state = "sending";
 
     const datos = new FormData(formulario);
 
@@ -106,20 +114,23 @@ formulario.addEventListener("submit", async function (evento) {
 
         if (respuesta.ok) {
             formStatus.textContent =
-                "Solicitud enviada correctamente. Nos comunicaremos contigo pronto.";
+                "Recibimos tu solicitud. Nos comunicaremos contigo para coordinar la revisión.";
 
+            formStatus.dataset.state = "success";
             formulario.reset();
         } else {
             formStatus.textContent =
                 "No se pudo enviar la solicitud. Inténtalo nuevamente.";
+            formStatus.dataset.state = "error";
         }
 
     } catch (error) {
         formStatus.textContent =
             "Ocurrió un problema al enviar la solicitud. Inténtalo nuevamente.";
+        formStatus.dataset.state = "error";
     } finally {
         submitButton.disabled = false;
-        submitButton.textContent = "Solicitar diagnóstico";
+        submitButton.textContent = "Enviar solicitud";
     }
 });
 
@@ -146,7 +157,7 @@ formulario.addEventListener("submit", async function (evento) {
         if (startedAt) remaining = Math.max(0, remaining - (performance.now() - startedAt));
         clearTimeout(timer);
         startedAt = 0;
-        const paused = userPaused || focused || document.hidden || !visible;
+        const paused = userPaused || focused || document.hidden || !visible || document.getElementById("diagnosticDialog").open;
         hero.classList.toggle("is-paused", paused);
         pauseButton.setAttribute("aria-pressed", String(userPaused));
         pauseButton.setAttribute("aria-label", userPaused ? "Continuar presentación automática" : "Pausar presentación automática");
@@ -204,6 +215,7 @@ formulario.addEventListener("submit", async function (evento) {
         if (!hero.contains(event.relatedTarget)) { focused = false; syncPlayback(); }
     });
     document.addEventListener("visibilitychange", syncPlayback);
+    document.addEventListener("diagnosticvisibilitychange", syncPlayback);
     reducedMotion.addEventListener("change", event => {
         userPaused = event.matches;
         syncPlayback();
@@ -234,3 +246,55 @@ formulario.addEventListener("submit", async function (evento) {
     fitMobileContent();
     show(0);
 })();
+
+
+// Todos los botones de diagnóstico comparten este formulario.
+(() => {
+    const dialog = document.getElementById("diagnosticDialog");
+    let opener;
+    document.querySelectorAll("[data-open-diagnostic]").forEach(button => {
+        button.addEventListener("click", () => {
+            opener = button;
+            if (!dialog.open) dialog.showModal();
+            document.body.classList.add("dialog-open");
+            document.dispatchEvent(new Event("diagnosticvisibilitychange"));
+            document.getElementById("nombre").focus({ preventScroll: true });
+        });
+    });
+    document.getElementById("closeDiagnostic").addEventListener("click", () => dialog.close());
+    dialog.addEventListener("click", event => {
+        if (event.target !== dialog) return;
+        const rect = dialog.getBoundingClientRect();
+        if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
+    });
+    dialog.addEventListener("close", () => {
+        document.body.classList.remove("dialog-open");
+        document.dispatchEvent(new Event("diagnosticvisibilitychange"));
+        if (opener && navMenu.contains(opener) && compactNavigation.matches && !navMenu.classList.contains("is-open")) navToggle.focus();
+        else if (opener && opener.isConnected) opener.focus();
+    });
+    formulario.addEventListener("input", () => {
+        if (formStatus.dataset.state === "success") {
+            formStatus.textContent = "";
+            delete formStatus.dataset.state;
+        }
+    });
+})();
+
+// Activa las redes cuando se completen sus direcciones oficiales en config.js.
+document.querySelectorAll("[data-social]").forEach(placeholder => {
+    const url = (window.TALLER_REDES || {})[placeholder.dataset.social];
+    if (!url) return;
+    try {
+        const parsed = new URL(url);
+        if (!["https:", "http:"].includes(parsed.protocol)) return;
+        const link = document.createElement("a");
+        link.href = parsed.href;
+        link.target = "_blank";
+        link.rel = "noopener";
+        link.dataset.social = placeholder.dataset.social;
+        link.setAttribute("aria-label", placeholder.getAttribute("aria-label"));
+        link.innerHTML = placeholder.innerHTML;
+        placeholder.replaceWith(link);
+    } catch { /* Conserva el ícono cuando no se configuró una dirección válida. */ }
+});

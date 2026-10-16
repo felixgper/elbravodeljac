@@ -1,45 +1,48 @@
-EL BRAVO DEL JAC - TABLA DE SERVICIOS Y WHATSAPP
-
-Esta version incorpora el diseno de hero-comercial-preview.html a la web completa.
-
-CAMBIOS
-- Carrusel con las cuatro diapositivas, fotos, video, textos y estilo de la referencia.
-- Diapositivas: presentacion, cambio de aceite desde S/ 140,
-  diagnostico electronico y especializacion JAC.
-- Poppins en los titulos y botones de toda la pagina; Inter en los parrafos,
-  como en la vista previa. Las fuentes estan incluidas en assets/fonts.
-- Flechas, indicadores con progreso, pausa y reproduccion silenciosa del video.
-- Enlaces del carrusel conectados a las secciones reales de la pagina.
-- Se conserva el menu movil del proyecto.
-- Servicios ahora muestra una tabla real de mantenimiento orientativo.
-- Se retiraron los apartados de problemas del vehiculo, trabajos realizados
-  (antes/despues), trabajo tecnico explicado sin rodeos y preguntas frecuentes.
-- Cada Consultar abre WhatsApp con el servicio y el motivo de esa fila.
-- El cliente puede completar marca/modelo/anio y su consulta antes de enviar.
-- Los enlaces no envian mensajes automaticamente.
-- En celular, la tabla se desplaza horizontalmente.
-
-ARCHIVOS
-- index.html: carrusel, tabla, mensajes de WhatsApp y estructura del sitio.
-- css/style.css: tipografia, carrusel y bloque final de tabla de mantenimiento.
-- js/script.js: bloque final "Carrusel comercial de cuatro diapositivas".
-- assets/images/comercial-*.jpg: fotos y portada extraidas de la referencia.
-- assets/videos/cambio-aceite.mp4: video de la promocion.
-- assets/fonts/: fuentes y sus licencias.
+EL BRAVO DEL JAC - VERSION COMERCIAL COMPLETA
 
 COMO REVISAR
 1. Descomprime el ZIP completo.
-2. Abre index.html en Chrome/Edge o con Live Server desde VS Code.
-3. Prueba las flechas, indicadores y el boton de pausa.
-4. La presentacion avanza automaticamente: 6 s, 13 s, 6 s y 6 s.
-5. El movimiento reducido del sistema inicia el carrusel pausado.
-6. La navegacion con teclado pausa los cambios mientras el foco esta dentro.
-7. En Servicios hay seis filas. Consultar abre WhatsApp con su mensaje preparado.
-8. El formulario de contacto conserva la conexion real a Formspree.
+2. Abre index.html en Chrome/Edge o abre la carpeta en VS Code y usa Live Server.
+3. No requiere instalar Node, paquetes ni base de datos.
 
-COMO COPIAR A TU REPOSITORIO LOCAL
-Copia el contenido de esta carpeta dentro de la carpeta que clonaste desde GitHub.
-Acepta reemplazar los archivos. Conserva la carpeta oculta .git del repositorio.
-El ZIP contiene los archivos del sitio y no incluye historial ni conexion Git.
-Despues ejecuta git status desde la carpeta clonada para ver los cambios.
-No se ha publicado ni enviado esta version a GitHub.
+QUE INCLUYE
+- Encabezado comercial con logo, horario, telefono y menu adaptable.
+- Carrusel de cuatro diapositivas del diseno aprobado; cambio de aceite desde S/ 140.
+- Poppins en titulos y botones, Inter en parrafos. Fuentes incluidas para uso local.
+- Torito mecanico con fondo transparente junto a la tabla de seis servicios.
+- Nombre de cada servicio e icono con un enlace a WhatsApp y mensaje propio.
+- Footer comercial con direccion, horario, telefono, accesos y Volver arriba.
+- Como llegar abre Google Maps con el destino del taller en otra pestana.
+- Todos los botones Solicitar diagnostico abren el mismo formulario en una ventana.
+- El formulario conserva sus datos al cerrar, admite Escape y se adapta al celular.
+- Se conservaron las secciones JAC, multimarca, proceso, nosotros, galeria y testimonios.
+- Permanecen retirados los cuatro apartados que se pidio eliminar.
+
+ARCHIVOS PRINCIPALES
+- index.html: estructura, enlaces de servicios, footer y formulario en dialog.
+- css/style.css: estilos y ajustes de escritorio, tableta y celular.
+- js/script.js: carrusel, menu, galeria, formulario y ventana de diagnostico.
+- js/config.js: enlaces oficiales de las redes sociales.
+- assets/images/torito-mecanico.png: mascota con transparencia.
+- assets/videos/cambio-aceite.mp4: video de la promocion.
+- assets/fonts/: fuentes locales y licencias.
+
+FORMULARIO
+Se conserva el destino original https://formspree.io/f/mdeopppo.
+Una solicitud real se envia al servicio original del taller.
+La confirmacion aparece solo cuando Formspree responde correctamente.
+La solicitud no confirma una cita; el taller coordina disponibilidad y condiciones.
+Las pruebas se hicieron interceptando las peticiones, sin enviar correos de prueba.
+
+REDES SOCIALES
+El codigo original no contenia los enlaces oficiales de Facebook, Instagram y TikTok.
+Sus iconos estan visibles, pero no enlazan a cuentas inventadas.
+Para activarlos, abre js/config.js y completa las tres direcciones entre comillas.
+El enlace a WhatsApp esta activo.
+
+ACTUALIZAR TU REPOSITORIO LOCAL
+Copia el CONTENIDO de esta carpeta dentro de la carpeta que clonaste desde GitHub.
+Acepta reemplazar los archivos. Conserva la carpeta oculta .git que ya tiene tu copia.
+El ZIP no incluye .git ni el historial de GitHub.
+Abre la carpeta clonada en VS Code y ejecuta git status para revisar los cambios.
+Esta version no se ha publicado ni enviado a GitHub.
