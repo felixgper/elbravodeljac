@@ -75,7 +75,6 @@
       <nav class="navbar__nav" id="navMenu">
         <a href="#inicio" class="navbar__link is-current" aria-current="page">Inicio</a>
         <a href="#servicios" class="navbar__link">Servicios</a>
-        <a href="#jac" class="navbar__link">Especialidades</a>
         <a href="#nosotros" class="navbar__link">Por qué elegirnos</a>
         <a href="#proceso" class="navbar__link">Proceso</a>
         <a href="#contacto" class="navbar__link">Contacto</a>
@@ -147,7 +146,7 @@
       <p class="commercial-sub">Conocemos sus motores, sistemas y fallas más frecuentes. También atendemos chinos, coreanos, japoneses, americanos y europeos.</p>
       <div class="commercial-cta">
         <a class="commercial-pill commercial-pill--red" href="https://wa.me/51993273611?text=Hola%2C%20tengo%20un%20JAC%20y%20quisiera%20consultar%20por%20una%20revisi%C3%B3n." target="_blank" rel="noopener">Consultar por WhatsApp</a>
-        <a class="commercial-pill commercial-pill--line" href="#jac">Ver especialidades</a>
+        <a class="commercial-pill commercial-pill--line" href="#nosotros">Por qué elegirnos</a>
       </div>
     </div>
   </div>
@@ -247,21 +246,52 @@
       </div>
     </section>
 
-    <!-- =================== JAC =================== -->
-    <section class="jac" id="jac">
-      <div class="container jac__grid">
-        <div class="jac__media">
-          <img src="assets/images/jac-motor.jpg" alt="Motor de vehículo JAC durante diagnóstico especializado" loading="lazy">
-        </div>
-        <div class="jac__content">
-          <p class="eyebrow">Especialidad del taller</p>
-          <h2 class="jac__title">Especialistas en vehículos JAC</h2>
-          <p class="jac__text">Conocemos sus motores, sistemas y fallas más frecuentes. Realizamos diagnóstico, mantenimiento y reparación especializada para toda la línea JAC.</p>
-          <div class="jac__media jac__media--secondary">
-            <img src="assets/images/jac-taller.jpg" alt="Técnico del taller trabajando sobre un vehículo JAC" loading="lazy">
+    <!-- =================== POR QUÉ ELEGIRNOS =================== -->
+    <section class="why-showcase" id="nosotros" aria-labelledby="whyShowcaseTitle">
+      <div class="container why-showcase__container">
+        <h2 id="whyShowcaseTitle">¿Por qué <span>elegirnos?</span></h2>
+        <div class="why-banner" id="whyBanner" role="region" aria-roledescription="carrusel" aria-label="Motivos para elegir El Bravo del Jac">
+          <div class="why-banner__slide is-active" id="whyReason1" role="group" aria-roledescription="diapositiva" aria-label="1 de 3">
+            <img class="why-banner__image" src="assets/images/jac-motor.jpg" alt="Diagnóstico de un motor JAC en el taller" loading="lazy">
+            <div class="why-banner__shade" aria-hidden="true"></div>
+            <div class="why-banner__copy">
+              <span class="why-banner__brand">EL BRAVO DEL JAC <span aria-hidden="true">/</span> ESPECIALIZACIÓN</span>
+              <h3>Tu JAC, en manos<br>que lo conocen.</h3>
+              <p>Conocemos sus motores, sistemas y fallas frecuentes. También atendemos distintas marcas con diagnóstico, mantenimiento y reparación.</p>
+              <button type="button" class="commercial-pill commercial-pill--red why-banner__cta" data-open-diagnostic aria-haspopup="dialog" aria-controls="diagnosticDialog">Solicitar diagnóstico <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+            </div>
           </div>
-          <div class="jac__note">
-            <p>También atendemos vehículos chinos, coreanos, japoneses, americanos y europeos.</p>
+          <div class="why-banner__slide" id="whyReason2" role="group" aria-roledescription="diapositiva" aria-label="2 de 3">
+            <img class="why-banner__image" src="assets/images/nosotros-taller.jpg" alt="Instalaciones del taller El Bravo del Jac" loading="lazy">
+            <div class="why-banner__shade" aria-hidden="true"></div>
+            <div class="why-banner__copy">
+              <span class="why-banner__brand">EL BRAVO DEL JAC <span aria-hidden="true">/</span> CLARIDAD ANTES DE REPARAR</span>
+              <h3>Tú conoces la falla.<br>Tú decides el trabajo.</h3>
+              <p>Te explicamos qué encontramos, qué necesita tu vehículo y qué se realizará. Empezamos cuando tú lo autorizas.</p>
+              <button type="button" class="commercial-pill commercial-pill--red why-banner__cta" data-open-diagnostic aria-haspopup="dialog" aria-controls="diagnosticDialog">Solicitar diagnóstico <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+            </div>
+          </div>
+          <div class="why-banner__slide" id="whyReason3" role="group" aria-roledescription="diapositiva" aria-label="3 de 3">
+            <img class="why-banner__image" src="assets/images/galeria-6.jpg" alt="Revisión del vehículo con equipo de diagnóstico" loading="lazy">
+            <div class="why-banner__shade" aria-hidden="true"></div>
+            <div class="why-banner__copy">
+              <span class="why-banner__brand">EL BRAVO DEL JAC <span aria-hidden="true">/</span> CUIDADO EN CADA ENTREGA</span>
+              <h3>Revisamos el resultado.<br>Cuidamos tu tranquilidad.</h3>
+              <p>Comprobamos el funcionamiento después de la reparación y te damos recomendaciones para el cuidado de tu vehículo.</p>
+              <button type="button" class="commercial-pill commercial-pill--red why-banner__cta" data-open-diagnostic aria-haspopup="dialog" aria-controls="diagnosticDialog">Solicitar diagnóstico <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+            </div>
+          </div>
+          <div class="why-banner__controls">
+            <span class="why-banner__count" aria-live="polite" aria-atomic="true"><strong id="whyBannerCurrent">01</strong><span aria-hidden="true"> / </span><span class="why-banner__total">03</span></span>
+            <div class="why-banner__navigation">
+              <button type="button" class="why-banner__arrow" id="whyBannerPrevious" aria-label="Ver motivo anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button>
+              <div class="why-banner__dots" role="group" aria-label="Elegir motivo">
+                <button type="button" class="why-banner__dot is-active" data-why-index="0" aria-label="Ver motivo 1: especialización" aria-controls="whyReason1" aria-pressed="true"></button>
+                <button type="button" class="why-banner__dot" data-why-index="1" aria-label="Ver motivo 2: transparencia" aria-controls="whyReason2" aria-pressed="false"></button>
+                <button type="button" class="why-banner__dot" data-why-index="2" aria-label="Ver motivo 3: revisión final" aria-controls="whyReason3" aria-pressed="false"></button>
+              </div>
+              <button type="button" class="why-banner__arrow" id="whyBannerNext" aria-label="Ver siguiente motivo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button>
+            </div>
           </div>
         </div>
       </div>
@@ -331,56 +361,6 @@
  </div>
 </section>
 
-    <!-- =================== POR QUÉ ELEGIRNOS =================== -->
-    <section class="why-jac" id="nosotros" aria-labelledby="whyJacTitle">
-      <div class="container why-jac__layout">
-        <div class="why-jac__intro">
-          <p class="why-jac__eyebrow">¿POR QUÉ ELEGIRNOS?</p>
-          <h2 id="whyJacTitle">Tu vehículo merece confianza.<br><span>Tú también.</span></h2>
-          <p class="why-jac__lead">Deja tu vehículo con tranquilidad. Te acompañamos con atención personalizada, explicaciones claras y trabajo especializado.</p>
-          <div class="why-jac__photo">
-            <img src="assets/images/nosotros-taller.jpg" alt="Interior del taller El Bravo del Jac" loading="lazy">
-            <div class="why-jac__photo-caption"><strong>EL BRAVO DEL JAC</strong><span>Especialistas en JAC y multimarca</span></div>
-          </div>
-        </div>
-        <div class="why-jac__details">
-          <ul class="why-jac__benefits">
-            <li class="why-jac__benefit"><span class="why-jac__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14.5 6.5 3 3m-6 8-4 4-5-5 4-4"/><path d="M21 3a6 6 0 0 1-8 8l-8 8a2 2 0 0 1-3-3l8-8a6 6 0 0 1 8-6l-3 3 3 3Z"/></svg></span><h3>Especialistas en JAC y multimarca</h3><p>Atención enfocada en lo que necesita tu vehículo, desde el diagnóstico hasta la reparación.</p></li>
-            <li class="why-jac__benefit"><span class="why-jac__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11a8 8 0 0 1-8 8H8l-5 3v-7a8 8 0 1 1 18-4Z"/><path d="M7 9h10M7 13h6"/></svg></span><h3>Entiende qué tiene tu auto</h3><p>Te explicamos la falla y la solución con palabras claras antes de comenzar.</p></li>
-            <li class="why-jac__benefit"><span class="why-jac__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s9-4 9-11V5l-9-3-9 3v6c0 7 9 11 9 11Z"/><path d="m8 12 3 3 5-6"/></svg></span><h3>Tú autorizas el trabajo</h3><p>Conoces lo que se realizará antes de la reparación y decides cómo seguimos.</p></li>
-            <li class="why-jac__benefit"><span class="why-jac__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m7.5 12 3 3 6-6"/></svg></span><h3>Revisamos antes de entregar</h3><p>Comprobamos el funcionamiento y te damos recomendaciones para cuidar tu vehículo.</p></li>
-          </ul>
-          <div class="why-jac__action"><p>Hablemos de lo que necesita tu vehículo.</p><button type="button" class="commercial-pill commercial-pill--red" data-open-diagnostic aria-haspopup="dialog" aria-controls="diagnosticDialog">Solicitar diagnóstico <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =================== TESTIMONIOS =================== -->
-    <section class="client-stories" id="testimonios" aria-labelledby="clientStoriesTitle">
-      <div class="container">
-        <div class="client-stories__heading"><div><p class="why-jac__eyebrow">QUIENES YA NOS ELIGIERON</p><h2 id="clientStoriesTitle">La confianza se gana<br><span>con cada reparación.</span></h2></div><p>Experiencias de clientes que confiaron en El Bravo del Jac para cuidar su vehículo.</p></div>
-        <p class="client-stories__hint" id="reviewSwipeHint">Desliza para leer las tres opiniones <span aria-hidden="true">→</span></p>
-        <div class="client-stories__grid" role="region" aria-label="Opiniones de nuestros clientes" tabindex="0">
-          <figure class="client-review">
-            <div class="client-review__top"><span class="client-review__quote-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6H4v7h4c0 3-1 4-3 5m15-12h-6v7h4c0 3-1 4-3 5"/></svg></span><span class="client-review__topic">Diagnóstico de falla</span></div>
-            <blockquote><p>“Antes de llegar a El Bravo del Jac ya había llevado mi carro a varios talleres y nadie encontraba bien la falla. Acá se tomaron el tiempo de revisarlo, me explicaron qué tenía y finalmente pudieron solucionarlo. Me fui bastante tranquilo porque por fin quedó bien.”</p></blockquote>
-            <figcaption><span class="client-review__avatar" aria-hidden="true">GA</span><div><strong>Gian Acosta</strong><span>Cliente de El Bravo del Jac</span></div></figcaption>
-          </figure>
-          <figure class="client-review">
-            <div class="client-review__top"><span class="client-review__quote-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6H4v7h4c0 3-1 4-3 5m15-12h-6v7h4c0 3-1 4-3 5"/></svg></span><span class="client-review__topic">Atención y reparación</span></div>
-            <blockquote><p>“Muy buena atención. Pensé que la reparación iba a demorar bastante, pero trabajaron rápido y el carro quedó muy bien. También me pareció justo el precio para todo lo que hicieron. Sin duda volvería si necesito otra revisión.”</p></blockquote>
-            <figcaption><span class="client-review__avatar" aria-hidden="true">DO</span><div><strong>David Orbegozo</strong><span>Cliente de El Bravo del Jac</span></div></figcaption>
-          </figure>
-          <figure class="client-review">
-            <div class="client-review__top"><span class="client-review__quote-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6H4v7h4c0 3-1 4-3 5m15-12h-6v7h4c0 3-1 4-3 5"/></svg></span><span class="client-review__topic">Atención personalizada</span></div>
-            <blockquote><p>“Vine desde provincia porque me recomendaron el taller y realmente valió la pena el viaje. Desde que llegué me atendieron con bastante paciencia, revisaron el vehículo y me fueron explicando lo que iban encontrando. Agradezco mucho la atención personalizada y el trato que tuvieron conmigo.”</p></blockquote>
-            <figcaption><span class="client-review__avatar" aria-hidden="true">AD</span><div><strong>Alvaro Diaz</strong><span>Cliente de El Bravo del Jac</span></div></figcaption>
-          </figure>
-        </div>
-        <div class="client-stories__closing"><p>Tu tranquilidad también puede empezar aquí.</p><button type="button" data-open-diagnostic aria-haspopup="dialog" aria-controls="diagnosticDialog">Cuéntanos qué le pasa a tu auto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div>
-      </div>
-    </section>
-
     <!-- =================== CONTACTO =================== -->
     
   </main>
@@ -401,7 +381,7 @@
     <div class="footer-column"><h3>Nuestros servicios</h3><ul class="footer-menu">
       <li><a href="#servicio-motor">Reparación de motor <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li><li><a href="#servicio-diagnostico">Diagnóstico electrónico <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li><li><a href="#servicio-aceite">Aceite y filtro <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li><li><a href="#servicio-general">Mantenimiento general <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li>
     </ul></div>
-    <div class="footer-column"><h3>Conoce el taller</h3><ul class="footer-menu"><li><a href="#nosotros">Por qué elegirnos <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li><li><a href="#jac">Especialistas en JAC <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li><li><a href="#proceso">Así trabajamos <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li><li><button type="button" data-open-diagnostic>Solicitar diagnóstico <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></li></ul>
+    <div class="footer-column"><h3>Conoce el taller</h3><ul class="footer-menu"><li><a href="#nosotros">Por qué elegirnos <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li><li><a href="#multimarca">Marcas que atendemos <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li><li><a href="#proceso">Así trabajamos <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></li><li><button type="button" data-open-diagnostic>Solicitar diagnóstico <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></li></ul>
       <h3 class="footer-social-title">Síguenos</h3><div class="footer-social">
 <span class="footer-social__pending" data-social="facebook" role="img" aria-label="Facebook"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 21v-8h3l.5-4H14V7c0-1 .3-2 2-2h2V1h-3c-4 0-6 2-6 6v2H6v4h3v8Z"/></svg></span>
 <span class="footer-social__pending" data-social="instagram" role="img" aria-label="Instagram"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg></span>

@@ -1,70 +1,47 @@
-EL BRAVO DEL JAC - VERSION COMERCIAL COMPLETA
+EL BRAVO DEL JAC - REVISION DEL 20 DE OCTUBRE DE 2026
 
 COMO REVISAR
 1. Descomprime el ZIP completo.
-2. Abre index.html en Chrome/Edge o abre la carpeta en VS Code y usa Live Server.
+2. Abre la carpeta en VS Code y ejecuta index.html con Live Server.
 3. No requiere instalar Node, paquetes ni base de datos.
 
-QUE INCLUYE
-- Encabezado comercial con logo, horario, telefono y menu adaptable.
-- Carrusel de cuatro diapositivas del diseno aprobado; cambio de aceite desde S/ 140.
-- Poppins en titulos y botones, Inter en parrafos. Fuentes incluidas para uso local.
-- Torito mecanico con fondo transparente junto a la tabla de seis servicios.
-- Nombre de cada servicio e icono con un enlace a WhatsApp y mensaje propio.
-- Footer comercial con direccion, horario, telefono, accesos y Volver arriba.
-- Como llegar abre Google Maps con el destino del taller en otra pestana.
-- Todos los botones Solicitar diagnostico abren el mismo formulario en una ventana.
-- El formulario conserva sus datos al cerrar, admite Escape y se adapta al celular.
-- Se conservan JAC, marcas y proceso. Por que elegirnos reemplaza Sobre nosotros.
-- Los testimonios tienen un nuevo diseno y conservan sus textos y autores originales.
-- La galeria permanece retirada.
-- Permanecen retirados los cuatro apartados que se pidio eliminar.
+CAMBIOS DE ESTA REVISION
+- Se retiro el bloque independiente Especialistas en vehiculos JAC.
+- En su lugar aparece Por que elegirnos, con banner fotografico panoramico.
+- Sus tres motivos presentan especializacion, claridad antes de reparar y revision final.
+- Las flechas, indicadores y gestos tactiles cambian el motivo. No avanza automaticamente.
+- Cada boton Solicitar diagnostico abre el formulario existente.
+- Se retiro el diseno anterior de cuatro tarjetas de beneficios.
+- Se retiro toda la seccion de testimonios.
+- Los enlaces de navegacion y del footer apuntan a secciones existentes.
 
-ARCHIVOS PRINCIPALES
-- index.html: estructura, enlaces de servicios, footer y formulario en dialog.
-- css/style.css: estilos y ajustes de escritorio, tableta y celular.
-- js/script.js: carrusel, menu, formulario y ventana de diagnostico.
-- js/config.js: enlaces oficiales de las redes sociales.
-- assets/images/torito-mecanico.png: mascota con transparencia.
-- assets/videos/cambio-aceite.mp4: video de la promocion.
-- assets/fonts/: fuentes locales y licencias.
+SE CONSERVA
+- Carrusel principal de cuatro diapositivas y video de aceite desde S/ 140.
+- Tabla de seis servicios y mensajes individuales de WhatsApp.
+- Telefono y WhatsApp: +51 993 273 611.
+- Las 34 marcas, el proceso de siete pasos y el footer comercial.
+- Poppins en titulos y botones; Inter en parrafos, con fuentes locales.
+- Direccion Urano 381, Lima 15306 y acceso a Google Maps.
+- Formulario unico con destino original https://formspree.io/f/mdeopppo.
+- Redes sociales configurables en js/config.js.
+
+ARCHIVOS MODIFICADOS
+- index.html: nuevo banner, secciones retiradas y navegacion.
+- css/style.css: estilos del banner y adaptacion a distintas pantallas.
+- js/script.js: controles manuales del banner.
+- LEEME-REVISION.txt: instrucciones de esta version.
+
+GITHUB
+La propuesta se guarda en una rama de revision. La rama main conserva su version.
+El ZIP no incluye .git. Si lo copias en tu repositorio local, conserva su carpeta .git.
+No se realiza un despliegue de la pagina.
 
 FORMULARIO
-Se conserva el destino original https://formspree.io/f/mdeopppo.
-Una solicitud real se envia al servicio original del taller.
-La confirmacion aparece solo cuando Formspree responde correctamente.
-La solicitud no confirma una cita; el taller coordina disponibilidad y condiciones.
-Las pruebas se hicieron interceptando las peticiones, sin enviar correos de prueba.
+El taller confirma disponibilidad y condiciones despues de recibir la solicitud.
+Las pruebas de envio deben interceptarse para no enviar solicitudes reales.
 
-REDES SOCIALES
-El codigo original no contenia los enlaces oficiales de Facebook, Instagram y TikTok.
-Sus iconos estan visibles, pero no enlazan a cuentas inventadas.
-Para activarlos, abre js/config.js y completa las tres direcciones entre comillas.
-El enlace a WhatsApp esta activo.
-
-ACTUALIZAR TU REPOSITORIO LOCAL
-Copia el CONTENIDO de esta carpeta dentro de la carpeta que clonaste desde GitHub.
-Acepta reemplazar los archivos. Conserva la carpeta oculta .git que ya tiene tu copia.
-El ZIP no incluye .git ni el historial de GitHub.
-Abre la carpeta clonada en VS Code y ejecuta git status para revisar los cambios.
-Esta propuesta esta guardada en una rama de revision de GitHub. La rama main no se modifica.
-El ZIP descargado desde esa rama incluye todos los archivos y recursos del proyecto.
-
-ACTUALIZACION ANTERIOR
-- Telefono y WhatsApp: +51 993 273 611.
-- Los mensajes individuales de cada servicio se conservan.
-- Se agregaron las 34 marcas de la imagen original del usuario.
-- Los logos se muestran con ventanas SVG sobre la imagen original, sin redibujarlos.
-- Proceso de siete pasos sobre foto del taller con capa oscura.
-- Se retiro la galeria, su ventana y sus enlaces.
-
-ACTUALIZACION 20 DE OCTUBRE DE 2026
-- Por que elegirnos: cuatro beneficios, foto del taller, torito tenue y acceso al diagnostico.
-- Se mantiene el destino #nosotros para los enlaces existentes.
-- Testimonios: tres tarjetas con iniciales, tema de la experiencia y autores originales.
-- En celular las opiniones se deslizan horizontalmente; en escritorio se muestran juntas.
-- No se agregan calificaciones, estrellas ni referencias a Google no verificadas.
-- Se conserva el telefono y WhatsApp +51 993 273 611 y todos los mensajes por servicio.
-- Carrusel, video, tabla, marcas, proceso y formulario original se conservan.
-- Validacion de estructura, recursos, enlaces, contenido original y sintaxis del JavaScript.
-- No fue posible ejecutar una vista previa en navegador en el entorno de esta sesion.
+VERIFICACION
+Se comprobaron los motivos, flechas, indicadores, teclado, gesto tactil y apertura del formulario.
+Se revisaron ocho anchos entre 320 y 1600 pixeles, sin desbordamientos ni superposicion.
+Se inspeccionaron las capturas de escritorio y celular, y se comprobaron los enlaces internos.
+No se detectaron errores JavaScript ni recursos locales ausentes.

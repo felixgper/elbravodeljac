@@ -256,3 +256,54 @@ document.querySelectorAll("[data-social]").forEach(placeholder => {
         placeholder.replaceWith(link);
     } catch { /* Conserva el ícono cuando no se configuró una dirección válida. */ }
 });
+
+
+// Motivos para elegir el taller: navegación manual, sin avance automático.
+(() => {
+    const banner = document.getElementById("whyBanner");
+    if (!banner) return;
+    const slides = Array.from(banner.querySelectorAll(".why-banner__slide"));
+    const dots = Array.from(banner.querySelectorAll("[data-why-index]"));
+    const counter = document.getElementById("whyBannerCurrent");
+    let current = 0;
+    let touchStart = null;
+
+    function show(index) {
+        current = (index + slides.length) % slides.length;
+        slides.forEach((slide, i) => {
+            slide.classList.toggle("is-active", i === current);
+            slide.inert = i !== current;
+            slide.setAttribute("aria-hidden", String(i !== current));
+        });
+        dots.forEach((dot, i) => {
+            dot.classList.toggle("is-active", i === current);
+            dot.setAttribute("aria-pressed", String(i === current));
+        });
+        counter.textContent = String(current + 1).padStart(2, "0");
+    }
+
+    document.getElementById("whyBannerPrevious").addEventListener("click", () => show(current - 1));
+    document.getElementById("whyBannerNext").addEventListener("click", () => show(current + 1));
+    dots.forEach((dot, i) => dot.addEventListener("click", () => show(i)));
+    banner.addEventListener("keydown", event => {
+        if (event.target.closest("a, input, textarea, select, [data-open-diagnostic]")) return;
+        if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
+            event.preventDefault();
+            show(current + (event.key === "ArrowRight" ? 1 : -1));
+        }
+    });
+    banner.addEventListener("pointerdown", event => {
+        touchStart = event.pointerType === "touch" && !event.target.closest("a, button")
+            ? { x: event.clientX, y: event.clientY } : null;
+    }, { passive: true });
+    banner.addEventListener("pointerup", event => {
+        if (!touchStart) return;
+        const dx = event.clientX - touchStart.x;
+        const dy = event.clientY - touchStart.y;
+        touchStart = null;
+        if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.5) show(current + (dx < 0 ? 1 : -1));
+    }, { passive: true });
+    banner.addEventListener("pointercancel", () => { touchStart = null; });
+    banner.classList.add("is-enhanced");
+    show(0);
+})();
