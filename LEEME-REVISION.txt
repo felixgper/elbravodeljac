@@ -15,7 +15,9 @@ QUE INCLUYE
 - Como llegar abre Google Maps con el destino del taller en otra pestana.
 - Todos los botones Solicitar diagnostico abren el mismo formulario en una ventana.
 - El formulario conserva sus datos al cerrar, admite Escape y se adapta al celular.
-- Se conservan JAC, nosotros y testimonios. Multimarca y proceso tienen los nuevos disenos. La galeria se retiro.
+- Se conservan JAC, marcas y proceso. Por que elegirnos reemplaza Sobre nosotros.
+- Los testimonios tienen un nuevo diseno y conservan sus textos y autores originales.
+- La galeria permanece retirada.
 - Permanecen retirados los cuatro apartados que se pidio eliminar.
 
 ARCHIVOS PRINCIPALES
@@ -45,12 +47,24 @@ Copia el CONTENIDO de esta carpeta dentro de la carpeta que clonaste desde GitHu
 Acepta reemplazar los archivos. Conserva la carpeta oculta .git que ya tiene tu copia.
 El ZIP no incluye .git ni el historial de GitHub.
 Abre la carpeta clonada en VS Code y ejecuta git status para revisar los cambios.
-Esta version no se ha publicado ni enviado a GitHub.
+Esta propuesta esta guardada en una rama de revision de GitHub. La rama main no se modifica.
+El ZIP descargado desde esa rama incluye todos los archivos y recursos del proyecto.
 
-ULTIMA ACTUALIZACION
+ACTUALIZACION ANTERIOR
 - Telefono y WhatsApp: +51 993 273 611.
 - Los mensajes individuales de cada servicio se conservan.
 - Se agregaron las 34 marcas de la imagen original del usuario.
 - Los logos se muestran con ventanas SVG sobre la imagen original, sin redibujarlos.
 - Proceso de siete pasos sobre foto del taller con capa oscura.
 - Se retiro la galeria, su ventana y sus enlaces.
+
+ACTUALIZACION 20 DE OCTUBRE DE 2026
+- Por que elegirnos: cuatro beneficios, foto del taller, torito tenue y acceso al diagnostico.
+- Se mantiene el destino #nosotros para los enlaces existentes.
+- Testimonios: tres tarjetas con iniciales, tema de la experiencia y autores originales.
+- En celular las opiniones se deslizan horizontalmente; en escritorio se muestran juntas.
+- No se agregan calificaciones, estrellas ni referencias a Google no verificadas.
+- Se conserva el telefono y WhatsApp +51 993 273 611 y todos los mensajes por servicio.
+- Carrusel, video, tabla, marcas, proceso y formulario original se conservan.
+- Validacion de estructura, recursos, enlaces, contenido original y sintaxis del JavaScript.
+- No fue posible ejecutar una vista previa en navegador en el entorno de esta sesion.
