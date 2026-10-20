@@ -10,6 +10,9 @@ CAMBIOS DE ESTA REVISION
 - En su lugar aparece Por que elegirnos, con banner fotografico panoramico.
 - Sus tres motivos presentan especializacion, claridad antes de reparar y revision final.
 - Las flechas, indicadores y gestos tactiles cambian el motivo. No avanza automaticamente.
+- Se incorporaron tres imagenes nuevas generadas con IA: diagnostico, asesoria y revision final.
+- Las imagenes estan optimizadas en WebP y tienen un recorte especifico para celular.
+- Los prompts originales y rutas se incluyen en IMAGENES-POR-QUE-ELEGIRNOS.txt.
 - Cada boton Solicitar diagnostico abre el formulario existente.
 - Se retiro el diseno anterior de cuatro tarjetas de beneficios.
 - Se retiro toda la seccion de testimonios.
