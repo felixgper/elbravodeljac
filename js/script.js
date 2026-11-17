@@ -206,6 +206,16 @@ formulario.addEventListener("submit", async function (evento) {
 })();
 
 
+(() => {
+    const toritoDialog = document.getElementById("toritoDialog");
+    document.getElementById("openTorito").addEventListener("click", () => toritoDialog.showModal());
+    document.getElementById("closeTorito").addEventListener("click", () => toritoDialog.close());
+    document.getElementById("toritoServices").addEventListener("click", () => toritoDialog.close());
+    toritoDialog.addEventListener("click", event => {
+        if (event.target === toritoDialog) toritoDialog.close();
+    });
+})();
+
 // Todos los botones de diagnóstico comparten este formulario.
 (() => {
     const dialog = document.getElementById("diagnosticDialog");

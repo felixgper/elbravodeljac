@@ -711,31 +711,174 @@ h1, h2, h3, h4 {
   .footer__grid { grid-template-columns: 1fr; }
 }
 
-/* ---------------- WhatsApp flotante ---------------- */
-.whatsapp-float {
+/* ---------------- Torito Asistente ---------------- */
+.torito-launcher {
   position: fixed;
-  right: 22px;
-  bottom: 22px;
-  width: 58px;
-  height: 58px;
-  background: #25D366;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  overflow: hidden;
+  border: 2px solid #e83848;
   border-radius: 50%;
+  background: #191c21;
+  box-shadow: 0 4px 14px #0005;
+  z-index: 90;
+  cursor: pointer;
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+
+.torito-launcher img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translateY(15%) scale(1.42);
+}
+
+@media (hover: hover) {
+  .torito-launcher:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 16px #0006;
+  }
+}
+
+.torito-launcher:focus-visible,
+.torito-dialog__close:focus-visible {
+  outline: 2px solid #ff6574;
+  outline-offset: 3px;
+}
+
+.torito-dialog {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 16px;
+  border: 0;
+  overflow: auto;
+  background: transparent;
+  color: #fff;
+}
+
+.torito-dialog[open] {
+  display: flex;
+}
+
+.torito-dialog::backdrop {
+  background: #050609b8;
+}
+
+body:has(.torito-dialog[open]) {
+  overflow: hidden;
+}
+
+.torito-dialog__panel {
+  position: relative;
+  width: min(100%, 360px);
+  margin: auto;
+  padding: 24px 20px;
+  border: 1px solid #ffffff30;
+  border-top: 3px solid #e83848;
+  border-radius: 18px;
+  background: #191c21;
+  box-shadow: 0 14px 42px #0007;
+  text-align: center;
+}
+
+.torito-dialog__close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #ffffff30;
+  border-radius: 50%;
+  background: #ffffff0a;
+  color: inherit;
+  font: 24px/1 var(--font-display);
+  cursor: pointer;
+}
+
+.torito-dialog__panel h2 {
+  margin: 0 32px 4px;
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.torito-dialog__subtitle,
+.torito-dialog__description {
+  margin: 0;
+  color: #c4cad0;
+  font-size: .875rem;
+}
+
+.torito-dialog__avatar {
+  display: block;
+  width: 112px;
+  height: 112px;
+  margin: 16px auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.torito-dialog__greeting {
+  margin: 0 0 4px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.torito-dialog__question {
+  margin: 0 0 8px;
+}
+
+.torito-dialog__actions {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.torito-dialog__action {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-  z-index: 90;
-  transition: transform 0.15s ease;
+  gap: 8px;
+  min-height: 44px;
+  padding: 6px 10px;
+  border: 1px solid #ffffff30;
+  border-radius: 8px;
+  background: #ffffff0a;
+  color: #fff;
+  font-size: .875rem;
+  font-weight: 600;
+  text-decoration: none;
 }
 
-.whatsapp-float:hover {
-  transform: scale(1.08);
+.torito-dialog__action svg {
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  color: #ff6574;
 }
 
-.whatsapp-float svg {
-  width: 42px;
-  height: 42px;
-  fill: #fff;
+.torito-dialog__action:hover,
+.torito-dialog__action:focus-visible {
+  border-color: #ff6574;
+  background: #e838481a;
+  color: #fff;
+}
+
+.torito-dialog__action:focus-visible {
+  outline: 2px solid #ff6574;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .torito-launcher { transition: none; }
 }
 
 /* ---------------- Utilidades ---------------- */
