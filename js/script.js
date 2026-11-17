@@ -208,7 +208,11 @@ formulario.addEventListener("submit", async function (evento) {
 
 (() => {
     const toritoDialog = document.getElementById("toritoDialog");
-    document.getElementById("openTorito").addEventListener("click", () => toritoDialog.showModal());
+    const toritoAvatar = document.getElementById("toritoAvatar");
+    document.getElementById("openTorito").addEventListener("click", () => {
+        if (toritoAvatar.isConnected) toritoAvatar.replaceWith(toritoAvatar.content);
+        toritoDialog.showModal();
+    });
     document.getElementById("closeTorito").addEventListener("click", () => toritoDialog.close());
     document.getElementById("toritoServices").addEventListener("click", () => toritoDialog.close());
     toritoDialog.addEventListener("click", event => {

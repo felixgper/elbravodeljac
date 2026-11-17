@@ -196,7 +196,9 @@
           <p class="section__lead">Elige un servicio y conversemos por WhatsApp.</p>
         </div>
         <div class="maintenance__layout">
-          <div class="maintenance__mascot"><p class="mascot-bubble">¡Elige tu servicio!</p><img src="assets/images/torito-mecanico.png" alt="Torito mecánico de El Bravo del Jac, con uniforme negro y rojo, señalando los servicios" loading="lazy" width="1024" height="1536"></div>
+          <div class="maintenance__mascot"><p class="mascot-bubble">¡Elige tu servicio!</p><img src="assets/images/torito-mecanico.webp"
+            srcset="assets/images/torito-mecanico-480.webp 480w, assets/images/torito-mecanico-800.webp 800w, assets/images/torito-mecanico.webp 1024w"
+            sizes="(max-width: 760px) 200px, (max-width: 1100px) 26vw, (max-width: 1480px) 29vw, 420px" alt="Torito mecánico de El Bravo del Jac, con uniforme negro y rojo, señalando los servicios" loading="lazy" width="1024" height="1536"></div>
           <div class="maintenance__content">
         <p class="maintenance__hint" id="maintenanceHint">Desliza para ver los detalles. Toca el nombre del servicio para escribirnos por WhatsApp.</p>
         <div class="maintenance__scroll" role="region" aria-label="Servicios y mantenimiento orientativo" tabindex="0">
@@ -394,7 +396,7 @@
 
   <!-- =================== TORITO ASISTENTE =================== -->
   <button class="torito-launcher" type="button" id="openTorito" aria-label="Abrir Torito Asistente" aria-haspopup="dialog" aria-controls="toritoDialog">
-    <img src="assets/images/torito-asistente-retrato.jpg" alt="" width="1024" height="1024">
+    <img src="assets/images/torito-asistente-retrato.webp" alt="" width="256" height="256">
   </button>
 
   <dialog class="torito-dialog" id="toritoDialog" aria-labelledby="toritoTitle" aria-describedby="toritoSubtitle toritoDescription">
@@ -402,7 +404,9 @@
       <button class="torito-dialog__close" type="button" id="closeTorito" aria-label="Cerrar Torito Asistente" autofocus>×</button>
       <h2 id="toritoTitle">Torito Asistente</h2>
       <p class="torito-dialog__subtitle" id="toritoSubtitle">Asistente inteligente de El Bravo del JAC</p>
-      <img class="torito-dialog__avatar" src="assets/images/torito-asistente-saludo.jpg" width="1024" height="1024" alt="Torito saludando">
+      <template id="toritoAvatar">
+        <img class="torito-dialog__avatar" src="assets/images/torito-asistente-saludo.webp" width="384" height="384" alt="Torito saludando">
+      </template>
       <p class="torito-dialog__greeting">¡Hola! Soy Torito 👋</p>
       <p class="torito-dialog__question">¿En qué puedo ayudarte?</p>
       <p class="torito-dialog__description" id="toritoDescription">Próximamente podré orientarte sobre nuestros servicios.</p>
